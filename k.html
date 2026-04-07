@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kabri Electric Services | Sagana, Kenya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+    
+    .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1509391366360-2e959f2a8f6a') center/cover no-repeat; }
+    
+    .service-card, .gallery-img { transition: all 0.4s ease; }
+    .service-card:hover { transform: translateY(-15px) scale(1.03); }
+    .gallery-img:hover { transform: scale(1.08); filter: brightness(1.1); }
+    
+    .nav-link { position: relative; }
+    .nav-link:after {
+      content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0;
+      background-color: #fbbf24; transition: all 0.3s ease;
+    }
+    .nav-link:hover:after { width: 100%; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-blue-900 text-3xl font-bold">⚡</div>
+        <div>
+          <h1 class="text-2xl font-bold">KABRI ELECTRIC</h1>
+          <p class="text-xs text-yellow-400 -mt-1">ELECTRIC & SOLAR SERVICES</p>
+        </div>
+      </div>
+
+      <div class="hidden md:flex space-x-8 text-lg">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#book" class="nav-link">Book Now</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <a href="https://wa.me/254792699175" target="_blank" class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full font-medium flex items-center gap-2">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero h-screen flex items-center text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-5xl md:text-7xl font-bold mb-6">Expert Electric & Solar Solutions</h2>
+      <p class="text-2xl mb-10">Sagana, Kirinyaga County</p>
+      <a href="#book" class="inline-block bg-yellow-400 text-black px-10 py-5 rounded-full text-2xl font-semibold hover:bg-yellow-300">
+        Book Service Now
+      </a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="service-card bg-white p-8 rounded-2xl shadow"><i class="fas fa-bolt text-5xl text-yellow-500 mb-6"></i><h3 class="text-2xl font-semibold">Electric Installation</h3></div>
+        <div class="service-card bg-white p-8 rounded-2xl shadow"><i class="fas fa-solar-panel text-5xl text-yellow-500 mb-6"></i><h3 class="text-2xl font-semibold">Solar Installation</h3></div>
+        <div class="service-card bg-white p-8 rounded-2xl shadow"><i class="fas fa-video text-5xl text-yellow-500 mb-6"></i><h3 class="text-2xl font-semibold">CCTV Installation</h3></div>
+        <div class="service-card bg-white p-8 rounded-2xl shadow"><i class="fas fa-fence text-5xl text-yellow-500 mb-6"></i><h3 class="text-2xl font-semibold">Electric Fence</h3></div>
+        <div class="service-card bg-white p-8 rounded-2xl shadow"><i class="fas fa-tools text-5xl text-yellow-500 mb-6"></i><h3 class="text-2xl font-semibold">Repair & Maintenance</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="book" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-8 text-blue-900">Book a Service</h2>
+      <form action="process_booking.php" method="POST" class="bg-gray-50 p-10 rounded-3xl shadow-xl">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium mb-2">Full Name</label>
+            <input type="text" name="name" required class="w-full p-4 rounded-xl border focus:outline-none focus:border-yellow-400">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Phone Number</label>
+            <input type="tel" name="phone" value="0792699175" required class="w-full p-4 rounded-xl border focus:outline-none focus:border-yellow-400">
+          </div>
+        </div>
+        
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Service Needed</label>
+          <select name="service" required class="w-full p-4 rounded-xl border focus:outline-none focus:border-yellow-400">
+            <option value="">Select Service</option>
+            <option value="Electric Installation">Electric Installation</option>
+            <option value="Solar Installation">Solar Installation</option>
+            <option value="CCTV Installation">CCTV Installation</option>
+            <option value="Electric Fence">Electric Fence Installation</option>
+            <option value="Repair & Maintenance">Repair & Maintenance</option>
+          </select>
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Preferred Date</label>
+          <input type="date" name="date" required class="w-full p-4 rounded-xl border focus:outline-none focus:border-yellow-400">
+        </div>
+
+        <div class="mt-6">
+          <label class="block text-sm font-medium mb-2">Message / Location</label>
+          <textarea name="message" rows="4" class="w-full p-4 rounded-xl border focus:outline-none focus:border-yellow-400" placeholder="e.g. Near Sagana Market..."></textarea>
+        </div>
+
+        <button type="submit" class="mt-8 w-full bg-blue-900 text-white py-5 rounded-2xl text-xl font-semibold hover:bg-blue-800">
+          Submit Booking Request
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">Our Projects</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959f2a8f6a" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-lg">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-lg">
+        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca5f8a" class="gallery-img w-full h-64 object-cover rounded-2xl shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Leave a Comment -->
+  <section class="py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-8 text-blue-900">What Our Customers Say</h2>
+      
+      <form action="process_comment.php" method="POST" class="bg-gray-50 p-10 rounded-3xl shadow-xl">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-4 mb-4 rounded-xl border">
+        <textarea name="comment" rows="4" placeholder="Write your comment about our services..." required class="w-full p-4 rounded-xl border"></textarea>
+        <button type="submit" class="mt-6 w-full bg-green-600 text-white py-4 rounded-2xl text-lg font-medium">
+          Post Comment
+        </button>
+      </form>
+
+      <div id="commentsDisplay" class="mt-10 space-y-6">
+        <!-- Comments will be loaded from backend later (see instructions) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-blue-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10">Contact Us</h2>
+      <a href="tel:+254792699175" class="text-4xl font-semibold text-yellow-400 block mb-4">0792 699 175</a>
+      <a href="https://wa.me/254792699175" target="_blank" class="text-2xl text-green-400">💬 WhatsApp Us</a>
+      <p class="mt-6">Sagana, Kirinyaga County</p>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-10 text-center">
+    <p class="text-2xl font-bold">KABRI ELECTRIC SERVICES</p>
+    <p>© 2026 | Sagana, Kenya</p>
+  </footer>
+
+  <script>
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
